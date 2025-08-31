@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade Moto G34!</title>
+    <title>Comunidade Motorola Moto G34</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="icon.png">
     <style>
@@ -187,8 +187,6 @@
             background-color: var(--primary-container);
             padding: 20px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
             z-index: 100;
             animation: slideDown 0.6s ease forwards;
             opacity: 0;
@@ -637,6 +635,7 @@
 
         .terminal-command {
             flex: 1;
+            word-break: break-all;
         }
 
         .terminal-copy {
@@ -648,6 +647,8 @@
             cursor: pointer;
             font-size: 12px;
             transition: all 0.2s ease;
+            white-space: nowrap;
+            margin-left: 10px;
         }
 
         .terminal-copy:hover {
@@ -715,6 +716,7 @@
         .download-info {
             display: flex;
             align-items: center;
+            flex: 1;
         }
 
         .download-icon {
@@ -728,10 +730,12 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 20px;
+            flex-shrink: 0;
         }
 
         .download-text {
             flex: 1;
+            min-width: 0;
         }
 
         .download-text h4 {
@@ -739,6 +743,9 @@
             font-weight: 600;
             color: var(--on-primary-container);
             margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .download-text p {
@@ -759,6 +766,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .download-btn:hover {
@@ -808,6 +816,7 @@
             margin-right: 10px;
             width: 20px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .link-item a {
@@ -816,6 +825,9 @@
             font-weight: 500;
             transition: all 0.2s ease;
             flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .link-item a:hover {
@@ -1181,6 +1193,16 @@
             .download-info {
                 margin-bottom: 15px;
             }
+            
+            .terminal-body {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .terminal-copy {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
@@ -1307,7 +1329,7 @@
 
     <footer>
         <div class="footer-content">
-            <p class="footer-text">Para nossa comunidade!</p>
+            <p class="footer-text">Comunidade Motorola Moto G34 - © 2023</p>
             <p class="footer-credits">Com carinho e dedicação à nossa amiga Mandy! Idealizadora de várias das ideias pro site <span class="footer-heart">❤️</span></p>
         </div>
     </footer>
@@ -1535,10 +1557,10 @@
                     </div>
                 `
             },
-            'emmc': {
-                title: 'EMMC',
+            'ufs': {
+                title: 'UFS',
                 icon: 'fa-hdd',
-                description: 'Ferramenta para verificar a saúde do seu armazenamento EMMC. Root obrigatório!',
+                description: 'Ferramenta para verificar a saúde do seu armazenamento UFS. Root obrigatório!',
                 tutorial: `
                     <div class="tutorial-section">
                         <div class="tutorial-section-title">
@@ -1552,7 +1574,7 @@
                                     </div>
                                     <div class="download-text">
                                         <h4>My-Disk-Health</h4>
-                                        <p>Aplicativo para verificar saúde do EMMC</p>
+                                        <p>Aplicativo para verificar saúde do UFS</p>
                                     </div>
                                 </div>
                                 <a href="My-Disk-Health-v.2.7.0.apk" class="download-btn" download>
@@ -1601,7 +1623,7 @@
                                 </div>
                                 <div class="step-item">
                                     <div class="step-number">6</div>
-                                    <div class="step-content">O resultado mostrará informações sobre a vida útil do seu EMMC</div>
+                                    <div class="step-content">O resultado mostrará informações sobre a vida útil do seu UFS</div>
                                 </div>
                             </div>
                         </div>
@@ -1726,11 +1748,11 @@
                                         <i class="fas fa-file-archive"></i>
                                     </div>
                                     <div class="download-text">
-                                        <h4>Magisk v28.0</h4>
+                                        <h4>Magisk v29.0</h4>
                                         <p>Última versão estável do Magisk</p>
                                     </div>
                                 </div>
-                                <a href="Magisk_28.0.apk.zip" class="download-btn" download>
+                                <a href="Magisk29.apk" class="download-btn" download>
                                     Baixar <i class="fas fa-arrow-down"></i>
                                 </a>
                             </div>
@@ -2136,6 +2158,7 @@
                                     </div>
                                     <div class="terminal-body">
                                         <div class="terminal-command">a) Abrir o CMD/PowerShell na pasta do Platform Tools</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
                                     </div>
                                 </div>
                                 <div class="terminal-container">
@@ -2146,6 +2169,7 @@
                                     </div>
                                     <div class="terminal-body">
                                         <div class="terminal-command">b) Adicionar a pasta ao PATH do sistema para usar em qualquer lugar</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
                                     </div>
                                 </div>
                                 <div class="step-item">
@@ -2381,8 +2405,8 @@
                     </div>
                 `
             },
-            'unlockbootloader1': {
-                title: 'Unlock Bootloader',
+            'desbloquear-bootloader': {
+                title: 'Desbloquear o Bootloader',
                 icon: 'fa-unlock',
                 description: 'Como desbloquear o bootloader do Moto G34 para instalar ROMs customizadas.',
                 tutorial: `
