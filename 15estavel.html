@@ -1,0 +1,2803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade G34!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --on-primary: #FFFFFF;
+            --primary-container: #D1E3FF;
+            --on-primary-container: #041A49;
+            --secondary: #6C5EBA;
+            --on-secondary: #FFFFFF;
+            --secondary-container: #E9DEFF;
+            --on-secondary-container: #230F68;
+            --tertiary: #006B5F;
+            --on-tertiary: #FFFFFF;
+            --tertiary-container: #78F2E5;
+            --on-tertiary-container: #00201C;
+            --error: #BA1A1A;
+            --on-error: #FFFFFF;
+            --error-container: #FFDAD6;
+            --on-error-container: #410002;
+            --background: #F8FAFF;
+            --on-background: #1A1B1E;
+            --surface: #FDFBFF;
+            --on-surface: #1A1B1E;
+            --surface-variant: #E1E2EC;
+            --on-surface-variant: #44464F;
+            --outline: #757780;
+            --outline-variant: #C5C6D0;
+            --shadow: #000000;
+            --scrim: #000000;
+            --inverse-surface: #2F3033;
+            --inverse-on-surface: #F1F0F4;
+            --inverse-primary: #A2C8FF;
+            --elevation-0: #FFFFFF;
+            --elevation-1: #F5F5F5;
+            --elevation-2: #E8E8E8;
+            --elevation-3: #DBDBDB;
+            --elevation-4: #CECECE;
+            --elevation-5: #C1C1C1;
+        }
+        [data-theme="dark"] {
+            --primary: #A2C8FF;
+            --on-primary: #002E72;
+            --primary-container: #0045A3;
+            --on-primary-container: #D1E3FF;
+            --secondary: #C9BFFF;
+            --on-secondary: #382C7A;
+            --secondary-container: #4F4192;
+            --on-secondary-container: #E9DEFF;
+            --tertiary: #4DD8CE;
+            --on-tertiary: #003731;
+            --tertiary-container: #004F46;
+            --on-tertiary-container: #78F2E5;
+            --error: #FFB4AB;
+            --on-error: #690005;
+            --error-container: #93000A;
+            --on-error-container: #FFDAD6;
+            --background: #1A1B1E;
+            --on-background: #E3E2E6;
+            --surface: #1A1B1E;
+            --on-surface: #E3E2E6;
+            --surface-variant: #44464F;
+            --on-surface-variant: #C5C6D0;
+            --outline: #8F9099;
+            --outline-variant: #44464F;
+            --shadow: #000000;
+            --scrim: #000000;
+            --inverse-surface: #E3E2E6;
+            --inverse-on-surface: #2F3033;
+            --inverse-primary: #0045A3;
+            --elevation-0: #212226;
+            --elevation-1: #2C2D31;
+            --elevation-2: #37383C;
+            --elevation-3: #424347;
+            --elevation-4: #4D4E52;
+            --elevation-5: #58595D;
+        }
+        [data-theme-color="red"] {
+            --primary: #FF4654;
+            --on-primary: #FFFFFF;
+            --primary-container: #FFDAD8;
+            --on-primary-container: #410008;
+            --secondary: #77565A;
+            --on-secondary: #FFFFFF;
+            --secondary-container: #FFDAD8;
+            --on-secondary-container: #2C1518;
+            --tertiary: #725B2F;
+            --on-tertiary: #FFFFFF;
+            --tertiary-container: #FFDF9F;
+            --on-tertiary-container: #261A00;
+            --background: #FFF8F7;
+        }
+        [data-theme-color="green"] {
+            --primary: #006E1C;
+            --on-primary: #FFFFFF;
+            --primary-container: #8CFF7F;
+            --on-primary-container: #0B3E00;
+            --secondary: #526449;
+            --on-secondary: #FFFFFF;
+            --secondary-container: #D5E8C7;
+            --on-secondary-container: #111F0A;
+            --tertiary: #38656A;
+            --on-tertiary: #FFFFFF;
+            --tertiary-container: #BCEBF0;
+            --on-tertiary-container: #001F24;
+            --background: #F7FBF5;
+        }
+        [data-theme-color="yellow"] {
+            --primary: #FFB300;
+            --on-primary: #FFFFFF;
+            --primary-container: #FFE0B2;
+            --on-primary-container: #3E2800;
+            --secondary: #6D5C40;
+            --on-secondary: #FFFFFF;
+            --secondary-container: #F7E0BB;
+            --on-secondary-container: #251A04;
+            --tertiary: #4C6544;
+            --on-tertiary: #FFFFFF;
+            --tertiary-container: #CFECBE;
+            --on-tertiary-container: #0E1F08;
+            --background: #FFFBF5;
+        }
+        [data-theme-color="purple"] {
+            --primary: #7E4FCC;
+            --on-primary: #FFFFFF;
+            --primary-container: #E9DDFF;
+            --on-primary-container: #29005A;
+            --secondary: #665A70;
+            --on-secondary: #FFFFFF;
+            --secondary-container: #EDDEF7;
+            --on-secondary-container: #21182B;
+            --tertiary: #A03E7E;
+            --on-tertiary: #FFFFFF;
+            --tertiary-container: #FFD8EC;
+            --on-tertiary-container: #3E002B;
+            --background: #F9F5FF;
+        }
+        [data-theme="dark"][data-theme-color="red"] {
+            --primary: #FF8A80;
+            --on-primary: #4C0000;
+            --primary-container: #FF1A1D;
+            --on-primary-container: #FFDAD8;
+            --secondary: #E7BEC1;
+            --on-secondary: #442F32;
+            --secondary-container: #5D3F43;
+            --on-secondary-container: #FFDAD8;
+            --tertiary: #FFC9A6;
+            --on-tertiary: #5A2E0F;
+            --tertiary-container: #7D4A2F;
+            --on-tertiary-container: #FFE0D6;
+            --background: #1C0D0D;
+        }
+        [data-theme="dark"][data-theme-color="green"] {
+            --primary: #81C784;
+            --on-primary: #1B5E20;
+            --primary-container: #2E7D32;
+            --on-primary-container: #E8F5E9;
+            --secondary: #A5D6A7;
+            --on-secondary: #1B5E20;
+            --secondary-container: #388E3C;
+            --on-secondary-container: #E8F5E9;
+            --tertiary: #4DB6AC;
+            --on-tertiary: #004D40;
+            --tertiary-container: #00897B;
+            --on-tertiary-container: #E0F2F1;
+            --background: #0D1E0D;
+        }
+        [data-theme="dark"][data-theme-color="yellow"] {
+            --primary: #FFD54F;
+            --on-primary: #3E2723;
+            --primary-container: #FBC02D;
+            --on-primary-container: #FFF8E1;
+            --secondary: #FFE082;
+            --on-secondary: #3E2723;
+            --secondary-container: #FFA000;
+            --on-secondary-container: #FFF8E1;
+            --tertiary: #FFB74D;
+            --on-tertiary: #E65100;
+            --tertiary-container: #FF9800;
+            --on-tertiary-container: #FFF3E0;
+            --background: #1E1A0D;
+        }
+        [data-theme="dark"][data-theme-color="purple"] {
+            --primary: #CE93D8;
+            --on-primary: #4A148C;
+            --primary-container: #9C27B0;
+            --on-primary-container: #F3E5F5;
+            --secondary: #E1BEE7;
+            --on-secondary: #4A148C;
+            --secondary-container: #8E24AA;
+            --on-secondary-container: #F3E5F5;
+            --tertiary: #F48FB1;
+            --on-tertiary: #880E4F;
+            --tertiary-container: #C2185B;
+            --on-tertiary-container: #FCE4EC;
+            --background: #1A0D1E;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--on-background);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+            padding-top: 80px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        /* Shapes flutuantes */
+        .shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary-container);
+            opacity: 0.4;
+            animation: float 15s infinite ease-in-out;
+        }
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 20s;
+        }
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-duration: 25s;
+            animation-delay: 2s;
+        }
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 30%;
+            animation-duration: 18s;
+            animation-delay: 5s;
+        }
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 70%;
+            animation-duration: 22s;
+            animation-delay: 1s;
+        }
+        .shape:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            top: 40%;
+            left: 50%;
+            animation-duration: 19s;
+            animation-delay: 3s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(10px) translateX(-10px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-15px) translateX(15px) rotate(3deg);
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-container);
+        }
+        header {
+            background-color: var(--primary-container);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            animation: slideDown 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            color: var(--on-primary-container);
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 12px;
+            border-radius: 50%;
+        }
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .telegram-btn {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .telegram-btn:hover {
+            background-color: var(--primary);
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .telegram-btn i {
+            margin-right: 8px;
+        }
+        .settings-btn, .clock-btn {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        .settings-btn:hover, .clock-btn:hover {
+            background-color: var(--primary);
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+        .settings-btn i, .clock-btn i {
+            font-size: 18px;
+            transition: transform 0.5s ease;
+        }
+        .settings-btn:hover i {
+            transform: rotate(180deg);
+        }
+        .clock-btn:hover i {
+            transform: rotate(360deg);
+        }
+        .hero {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+        .hero-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--on-background);
+        }
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: var(--on-surface);
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+        }
+        .search-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            transform: translateY(20px);
+        }
+        .search-wrapper {
+            position: relative;
+            background-color: var(--surface);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .search-wrapper:focus-within {
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.3), 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .search-input {
+            width: 100%;
+            padding: 18px 25px 18px 50px;
+            border: none;
+            font-size: 16px;
+            color: var(--on-surface);
+            outline: none;
+            background-color: var(--surface);
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 18px;
+        }
+        .topics-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            transform: translateY(20px);
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--on-background);
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 12px;
+            color: var(--primary);
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .topic-card {
+            background-color: var(--surface);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--outline-variant);
+        }
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+        .topic-card:hover::before {
+            transform: scaleY(1);
+        }
+        .topic-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: var(--primary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+        .topic-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--on-surface);
+        }
+        .topic-description {
+            font-size: 14px;
+            color: var(--on-surface-variant);
+            line-height: 1.5;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: var(--surface);
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.3s ease;
+            border: 1px solid var(--outline-variant);
+        }
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .modal-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background-color: var(--surface);
+            z-index: 10;
+        }
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--on-surface);
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--on-surface-variant);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .modal-close:hover {
+            background-color: var(--surface-variant);
+            color: var(--on-surface);
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .modal-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--on-surface);
+            margin-bottom: 25px;
+        }
+        .tutorial-container {
+            margin-bottom: 30px;
+        }
+        .tutorial-section {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--outline-variant);
+        }
+        .tutorial-section-title {
+            background-color: var(--primary-container);
+            color: var(--on-primary-container);
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .tutorial-section-title i {
+            margin-right: 10px;
+        }
+        .tutorial-section-content {
+            background-color: var(--surface-variant);
+            padding: 20px;
+        }
+        .terminal-container {
+            background-color: var(--elevation-2);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border: 1px solid var(--outline-variant);
+        }
+        .terminal-header {
+            background-color: var(--elevation-1);
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+        }
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .terminal-dot.red {
+            background-color: var(--error);
+        }
+        .terminal-dot.yellow {
+            background-color: #FFBD2E;
+        }
+        .terminal-dot.green {
+            background-color: #27C93F;
+        }
+        .terminal-body {
+            padding: 15px;
+            color: var(--on-surface);
+            font-size: 14px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .terminal-command {
+            flex: 1;
+            word-break: break-all;
+        }
+        .terminal-copy {
+            background-color: var(--elevation-1);
+            color: var(--on-surface);
+            border: 1px solid var(--outline-variant);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        .terminal-copy:hover {
+            background-color: var(--elevation-2);
+        }
+        .steps-container {
+            margin: 15px 0;
+        }
+        .step-item {
+            background-color: var(--surface);
+            border: 1px solid var(--outline-variant);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .step-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-color: var(--primary);
+            color: var(--on-primary);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .step-content {
+            padding-left: 20px;
+            color: var(--on-surface);
+            line-height: 1.5;
+        }
+        .download-box {
+            background-color: var(--primary-container);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border: 1px solid var(--outline-variant);
+        }
+        .download-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .download-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .download-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: var(--primary);
+            color: var(--on-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .download-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .download-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--on-primary-container);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .download-text p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            opacity: 0.9;
+        }
+        .download-btn {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .download-btn:hover {
+            background-color: var(--primary);
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+        .download-btn i {
+            margin-left: 8px;
+        }
+        .links-container {
+            background-color: var(--surface-variant);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--outline-variant);
+        }
+        .links-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--on-surface);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .links-title i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--outline);
+        }
+        .link-item:last-child {
+            border-bottom: none;
+        }
+        .link-item i {
+            color: var(--primary);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .link-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .link-item a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        .video-container {
+            background-color: var(--surface-variant);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid var(--outline-variant);
+        }
+        
+        .video-placeholder {
+            background-color: var(--elevation-2);
+            border-radius: 8px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--on-surface);
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-placeholder i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .video-play-btn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .video-play-btn:hover {
+            background-color: var(--primary);
+            filter: brightness(1.1);
+            transform: scale(1.1);
+        }
+        .video-play-btn i {
+            font-size: 24px;
+            color: var(--on-primary);
+        }
+        .note-box {
+            background-color: var(--tertiary-container);
+            border-left: 4px solid var(--tertiary);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid var(--outline-variant);
+        }
+        .note-box-title {
+            font-weight: 600;
+            color: var(--on-tertiary-container);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .note-box-title i {
+            margin-right: 8px;
+            color: var(--tertiary);
+        }
+        .note-box-content {
+            color: var(--on-tertiary-container);
+            line-height: 1.5;
+        }
+        .warning-box {
+            background-color: var(--error-container);
+            border-left: 4px solid var(--error);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid var(--outline-variant);
+        }
+        .warning-box-title {
+            font-weight: 600;
+            color: var(--on-error-container);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .warning-box-title i {
+            margin-right: 8px;
+            color: var(--error);
+        }
+        .warning-box-content {
+            color: var(--on-error-container);
+            line-height: 1.5;
+        }
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: flex-end;
+        }
+        .modal-btn {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .modal-btn:hover {
+            background-color: var(--primary);
+            filter: brightness(1.1);
+        }
+        .settings-menu {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 280px;
+            padding: 25px;
+            z-index: 1000;
+            display: none;
+            border: 2px solid var(--primary);
+            backdrop-filter: blur(10px);
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        .settings-menu.active {
+            display: block;
+            animation: slideDownIn 0.3s ease forwards;
+        }
+        .settings-menu.hide {
+            animation: slideUpOut 0.3s ease forwards;
+        }
+@keyframes slideUpOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+}
+        @keyframes slideDownIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+        .settings-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--on-surface);
+            display: flex;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--surface-variant);
+        }
+        .settings-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        .settings-option {
+            margin-bottom: 20px;
+        }
+        .settings-option-label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--on-surface);
+            display: block;
+        }
+        .color-picker {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .color-option.active {
+            border-color: var(--on-surface);
+            transform: scale(1.1);
+        }
+        .color-option.active::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 30px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+        .credits-section {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid var(--surface-variant);
+            text-align: center;
+        }
+        .credits-text {
+            font-size: 14px;
+            color: var(--on-surface);
+            margin-bottom: 5px;
+        }
+        .credits-heart {
+            color: var(--error);
+        }
+        footer {
+            background-color: var(--primary-container);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-text {
+            font-size: 16px;
+            color: var(--on-primary-container);
+            margin-bottom: 10px;
+        }
+        .footer-credits {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            opacity: 0.8;
+        }
+        .footer-heart {
+            color: var(--error);
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            .header-container {
+                padding: 0 15px;
+            }
+            .logo h1 {
+                font-size: 18px;
+            }
+            .telegram-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            .settings-btn, .clock-btn {
+                width: 36px;
+                height: 36px;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                margin: 30px auto;
+            }
+            .hero-content {
+                margin-bottom: 30px;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+            .hero-description {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .topics-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 15px;
+            }
+            .settings-menu {
+                right: 10px;
+                width: 260px;
+                padding: 20px;
+            }
+            .modal-content {
+                max-width: 95%;
+                margin: 10px;
+            }
+            .modal-header {
+                padding: 15px 20px;
+            }
+            .modal-body {
+                padding: 20px;
+            }
+            .download-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .download-info {
+                margin-bottom: 15px;
+            }
+            
+            .terminal-body {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .terminal-copy {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+            
+            .color-option {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .shape {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 24px;
+            }
+            .hero-description {
+                font-size: 15px;
+            }
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            .settings-menu {
+                width: 90%;
+                right: 5%;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Logo">
+                <h1>Comunidade Moto G34</h1>
+            </a>
+            <div class="header-actions">
+                <a href="https://t.me/MotoG34" target="_blank" class="telegram-btn">
+                    <i class="fab fa-telegram-plane"></i>
+                    Entrar no Grupo
+                </a>
+                <a href="atualizacoes.html" class="clock-btn" title="Atualizações">
+                    <i class="fas fa-clock"></i>
+                </a>
+                <button class="settings-btn" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="settings-menu" id="settingsMenu">
+        <h3 class="settings-title">
+            <i class="fas fa-cog"></i>
+            Configurações
+        </h3>
+        
+        <div class="settings-option">
+            <label class="settings-option-label">Tema Material You</label>
+            <div class="color-picker">
+                <div class="color-option active" style="background-color: #4A90E2" data-theme-color="blue"></div>
+                <div class="color-option" style="background-color: #FF4654" data-theme-color="red"></div>
+                <div class="color-option" style="background-color: #006E1C" data-theme-color="green"></div>
+                <div class="color-option" style="background-color: #FFB300" data-theme-color="yellow"></div>
+                <div class="color-option" style="background-color: #7E4FCC" data-theme-color="purple"></div>
+            </div>
+        </div>
+        
+        <div class="settings-option">
+            <label class="settings-option-label">Modo Escuro</label>
+            <label class="toggle-switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        
+        <div class="credits-section">
+            <div class="credits-text">
+                Créditos a nossa amiga Mandy! Idealizadora de várias das ideias pro site <span class="credits-heart">❤️</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bem-vindo à Comunidade Moto G34</h1>
+            <p class="hero-description">Explore o mundo de personalização e otimização para seu Motorola Moto G34. Encontre tutoriais, ROMs, ferramentas e muito mais!</p>
+        </div>
+        <div class="hero-image">
+            <img src="cell.png" alt="Motorola Moto G34">
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Pesquisar tópicos, tutoriais ou configurações..." id="searchInput">
+        </div>
+    </div>
+    
+    <div class="topics-container">
+        <h2 class="section-title">
+            <i class="fas fa-hashtag"></i>
+            Tópicos Disponíveis
+        </h2>
+        <div class="topics-grid" id="topicsGrid">
+        </div>
+    </div>
+    
+    <div class="modal" id="topicModal">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Título do Tópico</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description" id="modalDescription">Descrição do tópico...</p>
+                <div class="tutorial-container" id="tutorialContainer">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" id="modalBtn">Fechar</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">Nossa comunidade!</p>
+            <p class="footer-credits">Com carinho e dedicação à nossa amiga Mandy! Idealizadora de várias das ideias pro site <span class="footer-heart">❤️</span></p>
+        </div>
+    </footer>
+    
+    <script>
+        const topicData = {
+            'apatch': {
+                title: 'Apatch',
+                icon: 'fa-file-code',
+                description: 'APatch é um método de root alternativo ao KernelSU e superior ao Magisk. Sua instalação é simples e eficiente.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>APatch</h4>
+                                        <p>Repositório oficial do APatch no GitHub</p>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/bmax121/APatch" target="_blank" class="download-btn">
+                                    Acessar <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Instale o aplicativo do APatch no seu dispositivo</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Crie um patch enviando o arquivo boot da sua ROM para o aplicativo</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">O APatch gerará um novo arquivo boot.img patchado</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Faça o flash desse arquivo no seu celular usando o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">fastboot flash boot "nome ou localização do arquivo boot gerado aqui"</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Reinicie o celular</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Abra o aplicativo do APatch, digite a senha que você escolheu para o root e confirme a instalação</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'copy-partitions': {
+                title: 'Copy Partitions',
+                icon: 'fa-copy',
+                description: 'Ferramenta necessária para copiar partições do sistema, essencial para instalação de certas ROMs.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fas fa-file-archive"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>copypartitions.zip</h4>
+                                        <p>Arquivo necessário para cópia de partições</p>
+                                    </div>
+                                </div>
+                                <a href="copypartitions.zip" class="download-btn" download>
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Faça o download do arquivo copypartitions.zip</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Reinicie o dispositivo no modo recovery</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Selecione a opção "Install" ou "Instalar"</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Navegue até onde você salvou o arquivo copypartitions.zip</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Selecione o arquivo e confirme a instalação</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Reinicie o dispositivo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'drivers': {
+                title: 'Drivers',
+                icon: 'fa-usb',
+                description: 'Os drivers USB são necessários para que seu dispositivo seja reconhecido no seu computador.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>Drivers 32-bit</h4>
+                                        <p>Para sistemas Windows 32-bit</p>
+                                    </div>
+                                </div>
+                                <a href="drivers32.msi" class="download-btn" download>
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="download-box" style="margin-top: 15px;">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>Drivers 64-bit</h4>
+                                        <p>Para sistemas Windows 64-bit</p>
+                                    </div>
+                                </div>
+                                <a href="drivers64.msi" class="download-btn" download>
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Identifique sua versão do Windows (32-bit ou 64-bit)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Baixe o arquivo MSI correspondente à sua versão do Windows</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Execute o instalador dos drivers como administrador</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Siga as instruções na tela para completar a instalação</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Reinicie o computador</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Conecte seu dispositivo ao PC para verificar se foi reconhecido corretamente</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-box-title">
+                            <i class="fas fa-info-circle"></i> Compatibilidade
+                        </div>
+                        <div class="note-box-content">
+                            Os drivers USB da Motorola para Windows são compatíveis com Windows Vista, Windows 7, Windows 8, Windows 10 e Windows 11.
+                        </div>
+                    </div>
+                `
+            },
+            'ufs': {
+                title: 'UFS',
+                icon: 'fa-hdd',
+                description: 'Ferramenta para verificar a saúde do seu armazenamento UFS. Root obrigatório!',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>My-Disk-Health</h4>
+                                        <p>Aplicativo para verificar saúde do UFS</p>
+                                    </div>
+                                </div>
+                                <a href="My-Disk-Health-v.2.7.0.apk" class="download-btn" download>
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Verifique se você tem acesso root no dispositivo</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Instale o aplicativo My-Disk-Health</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Abra o aplicativo e verifique o status da saúde do seu armazenamento</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Alternativamente, você pode conferir acessando o terminal</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Abra um aplicativo de terminal e digite o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">su -c cat /sys/class/mmc_host/mmc0/mmc0:0001/life_time</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">O resultado mostrará informações sobre a vida útil do seu UFS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-box-title">
+                            <i class="fas fa-exclamation-triangle"></i> Importante
+                        </div>
+                        <div class="note-box-content">
+                            Este procedimento requer acesso root ao dispositivo. Certifique-se de ter o root instalado antes de prosseguir.
+                        </div>
+                    </div>
+                `
+            },
+            'gapps': {
+                title: 'GApps',
+                icon: 'fa-google',
+                description: 'GApps significa "Google Apps", um pacote com aplicativos essenciais do Google para sua ROM.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-info-circle"></i> O que são GApps?
+                        </div>
+                        <div class="tutorial-section-content">
+                            <p>GApps significa "Google Apps", isso é um pacote com apps para facilitar a utilização da sua ROM, no pacote contém apps como, Play Store, Google, Google Files, etc... (Os apps contidos podem variar de acordo com a variante escolhida)</p>
+                            
+                            <div class="note-box">
+                                <div class="note-box-title">
+                                    <i class="fas fa-lightbulb"></i> Dica
+                                </div>
+                                <div class="note-box-content">
+                                    Não é necessário usar GApps em ROMs que não sejam "Vanilla" como por exemplo, Pixel Experience e PixelOS que já incluem os apps do Google.
+                                </div>
+                            </div>
+                            
+                            <p>Vale lembrar que nas ROMs 8.1 e superior, a versão dos GApps é sempre ARM64.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Opções de Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="links-container">
+                                <div class="links-title">
+                                    <i class="fas fa-external-link-alt"></i> Links para Download
+                                </div>
+                                <div class="link-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a href="https://opengapps.org/" target="_blank">OpenGapps</a>
+                                </div>
+                                <div class="link-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a href="https://litegapps.github.io/" target="_blank">LiteGapps</a>
+                                </div>
+                                <div class="link-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <a href="https://sourceforge.net/projects/nikgapps/files/Releases/" target="_blank">NikGapps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Verifique se sua ROM necessita de GApps (ROMs "Vanilla" precisam, enquanto ROMs como Pixel Experience e PixelOS já incluem)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Escolha uma variante de GApps: OpenGapps, LiteGapps ou NikGapps</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Baixe a versão correta para seu dispositivo (ARM64 para Android 8.1+)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Reinicie no modo recovery</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Selecione "Install" ou "Instalar"</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Navegue até onde você salvou o arquivo GApps</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">Selecione o arquivo e confirme a instalação</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">Reinicie o dispositivo (pode demorar na primeira inicialização)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'magisk': {
+                title: 'Magisk',
+                icon: 'fa-magic',
+                description: 'Magisk é um sistema de root sem modificar a partição do sistema, permitindo ocultação do root.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fas fa-file-archive"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>Magisk v29.0</h4>
+                                        <p>Última versão estável do Magisk</p>
+                                    </div>
+                                </div>
+                                <a href="Magisk29.apk" class="download-btn" download>
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Baixe o arquivo Magisk mais recente</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Reinicie no modo recovery</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Selecione "Install" ou "Instalar"</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Navegue até onde você salvou o arquivo Magisk</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Selecione o arquivo e confirme a instalação</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Reinicie o dispositivo</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">Instale o Magisk Manager a partir do APK baixado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'logs': {
+                title: 'Logs',
+                icon: 'fa-file-alt',
+                description: 'Como extrair e analisar logs do sistema para diagnóstico de problemas.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Como Fazer Logs
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Se a ROM travar na animação de inicialização ou se precisar de logs normais</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">1.1</div>
+                                    <div class="step-content">No TWRP, monte o sistema (System) e delete o arquivo /system/phh/secure, depois reinicie o dispositivo</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">1.2</div>
+                                    <div class="step-content">Durante a bootanimation, conecte o telefone ao PC</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">1.3</div>
+                                    <div class="step-content">Use o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb logcat -d all > logs.txt</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Se a ROM não permitir o ADB (dispositivo não autorizado)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2.1</div>
+                                    <div class="step-content">Reinicie para o TWRP</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2.2</div>
+                                    <div class="step-content">Conecte o telefone ao PC</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2.3</div>
+                                    <div class="step-content">Execute o seguinte comando, de acordo com seu sistema operacional:</div>
+                                </div>
+                                
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">Linux/macOS:</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb push ~/.android/adbkey.pub /data/misc/adb/adb_keys</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">Windows:</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb push C:\\Users\\%SeuNomeDeUsuário%\\.android\\adbkey.pub /data/misc/adb/adb_keys</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number">2.4</div>
+                                    <div class="step-content">Agora, você pode obter os logs com o logcat</div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Se o telefone travar ou entrar em bootloop no splash</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3.1</div>
+                                    <div class="step-content">Reinicie para o TWRP logo após o travamento ou bootloop</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3.2</div>
+                                    <div class="step-content">Procure os seguintes logs:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">/sys/fs/pstore/console-ramoops</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'roms': {
+                title: 'ROMs',
+                icon: 'fa-memory',
+                description: 'Sistemas operacionais alternativos para seu Moto G34, com diferentes recursos e personalizações.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Onde Encontrar
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="links-container">
+                                <div class="links-title">
+                                    <i class="fas fa-telegram"></i> Grupo Oficial
+                                </div>
+                                <div class="link-item">
+                                    <i class="fas fa-telegram"></i>
+                                    <a href="https://t.me/MotoG34Global" target="_blank">Moto G34 Global</a>
+                                </div>
+                            </div>
+                            
+                            <div class="note-box">
+                                <div class="note-box-title">
+                                    <i class="fas fa-info-circle"></i> Informações
+                                </div>
+                                <div class="note-box-content">
+                                    No grupo oficial do Telegram, você encontrará as ROMs mais recentes e atualizadas para o Moto G34, além de suporte da comunidade.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Entre no grupo do Telegram Moto G34 Global</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Verifique os tópicos fixados ou procure por ROMs recentes</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Leia atentamente as informações sobre a ROM (compatibilidade, bugs, etc.)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Faça o download da ROM desejada</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Faça backup completo do seu sistema atual</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Reinicie no modo recovery</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">Limpe o sistema (Wipe: Data, Cache, Dalvik)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">Instale a ROM</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">9</div>
+                                    <div class="step-content">Se necessário, instale GApps e Magisk</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">10</div>
+                                    <div class="step-content">Reinicie o dispositivo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'oque-e-root?': {
+                title: 'O que é Root?',
+                icon: 'fa-question-circle',
+                description: 'Explicação sobre o que é acesso root e suas vantagens e desvantagens.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-info-circle"></i> O que é Root?
+                        </div>
+                        <div class="tutorial-section-content">
+                            <p>Falando de uma forma bem simples, root é um recurso que quando disponibilizado no aparelho, permite que você tenha acesso completo a todos os arquivos da raíz do seu sistema, com isso você tem uma liberdade maior para alterar o sistema como preferir.</p>
+                            
+                            <div class="note-box">
+                                <div class="note-box-title">
+                                    <i class="fas fa-lightbulb"></i> Como Começar
+                                </div>
+                                <div class="note-box-content">
+                                    Para começar a ter root use o comando "#magisk" ou "#apatch" e obtenha os arquivos necessários.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-video"></i> Vídeo Explicativo
+                        </div>
+                        <div class="tutorial-section-content">
+<div class="video-container">
+    <h4>Mais informações em vídeo</h4>
+    <div class="youtube-video">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/TliZkwWzdpE" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Vantagens e Desvantagens
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number"><i class="fas fa-plus"></i></div>
+                                    <div class="step-content"><strong>Vantagens:</strong> Personalização avançada, remoção de bloatware, melhor desempenho, acesso a recursos exclusivos</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number"><i class="fas fa-minus"></i></div>
+                                    <div class="step-content"><strong>Desvantagens:</strong> Perda de garantia, riscos de segurança, possibilidade de brickar o dispositivo, alguns apps não funcionam</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'plataform-tools': {
+                title: 'Platform Tools',
+                icon: 'fa-tools',
+                description: 'O SDK Platform Tools é necessário para realizar a ação de enviar comandos ao bootloader do seu celular.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-info-circle"></i> O que são Platform Tools?
+                        </div>
+                        <div class="tutorial-section-content">
+                            <p>O SDK Platform Tools é um pacote de ferramentas essenciais para desenvolvedores Android e entusiastas que precisam interagir com dispositivos Android através de comandos ADB (Android Debug Bridge) e Fastboot.</p>
+                            
+                            <p>Este pacote inclui utilitários como:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 15px;">
+                                <li>ADB - Para depuração e comunicação com dispositivos</li>
+                                <li>Fastboot - Para flashing de partições e bootloader</li>
+                                <li>Outras ferramentas essenciais para desenvolvimento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-download"></i> Download
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="download-box">
+                                <div class="download-info">
+                                    <div class="download-icon">
+                                        <i class="fab fa-google"></i>
+                                    </div>
+                                    <div class="download-text">
+                                        <h4>Platform Tools</h4>
+                                        <p>Pacote oficial de ferramentas para Windows</p>
+                                    </div>
+                                </div>
+                                <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" class="download-btn">
+                                    Baixar <i class="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="note-box">
+                                <div class="note-box-title">
+                                    <i class="fas fa-info-circle"></i> Informações
+                                </div>
+                                <div class="note-box-content">
+                                    O link acima direciona para a versão mais recente do Platform Tools para Windows. Se você usa macOS ou Linux, visite a página oficial do Android Developers para baixar a versão compatível com seu sistema.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Como Usar
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Faça o download do arquivo ZIP do Platform Tools</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Extraia o conteúdo do arquivo em uma pasta de fácil acesso</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Abra a pasta extraída e localize o executável adequado (adb.exe ou fastboot.exe)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Para usar os comandos, você pode:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">a) Abrir o CMD/PowerShell na pasta do Platform Tools</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">b) Adicionar a pasta ao PATH do sistema para usar em qualquer lugar</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Conecte seu dispositivo ao PC com a depuração USB ativada</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Teste a conexão com o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb devices</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'tutorial-custom-rom': {
+                title: 'Tutorial Custom ROM',
+                icon: 'fa-book',
+                description: 'Guia completo para instalar uma ROM customizada no Moto G34.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Pré-requisitos
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Desbloquear o bootloader</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Baixar a ROM, TWRP e o copy-partitions</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Colocar o copy-partitions na pasta download do celular</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Colocar a ROM e o TWRP na pasta Platform Tools</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-cogs"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Conectar o celular no PC pelo USB no modo fastboot</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Abrir o CMD pela pasta Platform Tools</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Digitar o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">fastboot boot (arrasta o TWRP para o CMD e aperte enter)</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Espere o celular reiniciar no TWRP</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">No TWRP: Install > Download > copy-partitions > deslize para instalar</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Quando terminar de instalar o copy-partitions, volte ao início e vá em: Advanced > ADB Sideload</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">No CMD digite:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb sideload (arraste o ZIP da ROM e aperte enter)</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">Espere instalar. Se tudo der certo, vai aparecer uma animação diferente da Motorola quando o celular reiniciar (o "M" ainda vai aparecer)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <div class="warning-box-title">
+                            <i class="fas fa-exclamation-triangle"></i> Aviso Importante
+                        </div>
+                        <div class="warning-box-content">
+                            Certifique-se de fazer backup completo dos seus dados antes de prosseguir. A instalação de uma ROM customizada apagará todos os dados do dispositivo. Siga os passos exatamente como descrito para evitar problemas.
+                        </div>
+                    </div>
+                `
+            },
+            'tela-90hz': {
+                title: 'Tela 90Hz',
+                icon: 'fa-tv',
+                description: 'A tela do Moto G34 possui um modo oculto de 90 Hz. Saiba como habilitá-lo.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-info-circle"></i> Sobre a Taxa de Atualização
+                        </div>
+                        <div class="tutorial-section-content">
+                            <p>A tela do Moto G34 possui um modo oculto de 90 Hz, não mostrado nas configurações da stock ROM. Esta taxa de atualização mais alta proporciona uma experiência visual mais fluida, especialmente em jogos e animações.</p>
+                            
+                            <div class="note-box">
+                                <div class="note-box-title">
+                                    <i class="fas fa-lightbulb"></i> Importante
+                                </div>
+                                <div class="note-box-content">
+                                    As configurações serão redefinidas e voltará ao normal se você escolher qualquer opção de taxa de atualização em Configurações, então para manter não mude nada nas configurações de tela do sistema.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Abra o terminal/CMD na pasta das ferramentas Platform Tools</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Conecte seu dispositivo ao PC com a depuração USB ativada</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Digite o comando para acessar o shell do dispositivo:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb shell</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Defina a taxa de atualização mínima para 60Hz:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">settings put system min_refresh_rate 60</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Defina a taxa de atualização máxima para 90Hz:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">settings put system peak_refresh_rate 90</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Após enviar os comandos, sua tela ficará em 90Hz automaticamente</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">Não é necessário ir às configurações para confirmar, a alteração já está ativa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <div class="warning-box-title">
+                            <i class="fas fa-exclamation-triangle"></i> Aviso
+                        </div>
+                        <div class="warning-box-content">
+                            Lembre-se que se você acessar as configurações de tela do sistema e alterar qualquer opção relacionada à taxa de atualização, as configurações serão redefinidas para o padrão (60Hz).
+                        </div>
+                    </div>
+                `
+            },
+            'desbloquear-bootloader': {
+                title: 'Desbloquear o Bootloader',
+                icon: 'fa-unlock',
+                description: 'Como desbloquear o bootloader do Moto G34 para instalar ROMs customizadas.',
+                tutorial: `
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-info-circle"></i> O que é Desbloquear o Bootloader?
+                        </div>
+                        <div class="tutorial-section-content">
+                            <p>Desbloquear o bootloader é o primeiro passo para instalar ROMs customizadas ou fazer modificações avançadas no seu dispositivo. Este processo permite que você inicie o sistema operacional a partir de uma fonte não assinada pelo fabricante.</p>
+                            
+                            <div class="warning-box">
+                                <div class="warning-box-title">
+                                    <i class="fas fa-exclamation-triangle"></i> Aviso Importante
+                                </div>
+                                <div class="warning-box-content">
+                                    Desbloquear o bootloader irá apagar todos os dados do seu dispositivo e pode anular sua garantia. Certifique-se de fazer backup de todos os seus dados importantes antes de prosseguir.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-section">
+                        <div class="tutorial-section-title">
+                            <i class="fas fa-list-ol"></i> Passo a Passo
+                        </div>
+                        <div class="tutorial-section-content">
+                            <div class="steps-container">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Faça backup de todos os seus dados importantes</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Vá para Configurações > Sobre o telefone</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Toque 7 vezes em "Número da versão" para ativar as Opções do desenvolvedor</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Volte para o menu principal e acesse Opções do desenvolvedor</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">Ative "Depuração USB" e "Desbloqueio OEM"</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">Conecte seu dispositivo ao PC via cabo USB</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">7</div>
+                                    <div class="step-content">Abra o CMD/Terminal na pasta das Platform Tools</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">8</div>
+                                    <div class="step-content">Reinicie o dispositivo no modo bootloader com o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">adb reboot bootloader</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">9</div>
+                                    <div class="step-content">Obtenha os dados de desbloqueio com o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">fastboot oem get_unlock_data</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">10</div>
+                                    <div class="step-content">Anote ou copie o código de desbloqueio que aparece (sem espaços)</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">11</div>
+                                    <div class="step-content">Para desbloquear, use o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">fastboot oem unlock CÓDIGO_DE_DESBLOQUEIO</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">12</div>
+                                    <div class="step-content">Confirme no dispositivo quando solicitado</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">13</div>
+                                    <div class="step-content">Aguarde o processo de desbloqueio finalizar</div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">14</div>
+                                    <div class="step-content">Reinicie o dispositivo com o comando:</div>
+                                </div>
+                                <div class="terminal-container">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <div class="terminal-command">fastboot reboot</div>
+                                        <button class="terminal-copy" onclick="copyToClipboard(this)">Copiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-box-title">
+                            <i class="fas fa-info-circle"></i> Nota
+                        </div>
+                        <div class="note-box-content">
+                            O Bugjaegar Fastboot shell's output não é estruturado corretamente; crie uma string ID correta usando a amostra fornecida pelo comando get_unlock_data.
+                        </div>
+                    </div>
+                `
+            }
+        };
+        
+        const topicsGrid = document.getElementById('topicsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const modal = document.getElementById('topicModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const tutorialContainer = document.getElementById('tutorialContainer');
+        const modalClose = document.getElementById('modalClose');
+        const modalBtn = document.getElementById('modalBtn');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsMenu = document.getElementById('settingsMenu');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const colorOptions = document.querySelectorAll('.color-option');
+        
+        function initializeTopics() {
+            topicsGrid.innerHTML = '';
+            
+            Object.keys(topicData).forEach(topicKey => {
+                const topic = topicData[topicKey];
+                
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.setAttribute('data-topic', topicKey);
+                
+                topicCard.innerHTML = `
+                    <div class="topic-icon">
+                        <i class="fas ${topic.icon}"></i>
+                    </div>
+                    <h3 class="topic-title">${topic.title}</h3>
+                    <p class="topic-description">${topic.description}</p>
+                `;
+                
+                topicCard.addEventListener('click', function() {
+                    showTopicModal(topicKey);
+                });
+                
+                topicsGrid.appendChild(topicCard);
+            });
+        }
+        
+        function showTopicModal(topicKey) {
+            const topic = topicData[topicKey];
+            
+            modalTitle.textContent = topic.title;
+            modalDescription.textContent = topic.description;
+            
+            tutorialContainer.innerHTML = '';
+            tutorialContainer.innerHTML = topic.tutorial;
+            
+            modal.style.display = 'flex';
+            modalContent.scrollTop = 0;
+        }
+        
+        function hideTopicModal() {
+            modalContent.style.animation = 'fadeOut 0.3s ease forwards';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modalContent.style.animation = 'modalSlideIn 0.3s ease';
+            }, 300);
+        }
+        
+        function copyToClipboard(button) {
+            const terminalCommand = button.parentElement.querySelector('.terminal-command').textContent;
+            
+            navigator.clipboard.writeText(terminalCommand).then(function() {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.style.backgroundColor = 'var(--primary)';
+                button.style.color = 'var(--on-primary)';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = 'var(--elevation-1)';
+                    button.style.color = 'var(--on-surface)';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Erro ao copiar texto: ', err);
+            });
+        }
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            const topicCards = document.querySelectorAll('.topic-card');
+            topicCards.forEach(card => {
+                const title = card.querySelector('.topic-title').textContent.toLowerCase();
+                const description = card.querySelector('.topic-description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        modalClose.addEventListener('click', hideTopicModal);
+        
+        modalBtn.addEventListener('click', hideTopicModal);
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                hideTopicModal();
+            }
+        });
+        
+        settingsBtn.addEventListener('click', function() {
+            if (settingsMenu.classList.contains('active')) {
+                settingsMenu.classList.add('hide');
+                setTimeout(() => {
+                    settingsMenu.classList.remove('active');
+                    settingsMenu.classList.remove('hide');
+                }, 300);
+            } else {
+                settingsMenu.classList.add('active');
+                settingsMenu.classList.remove('hide');
+            }
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (!settingsBtn.contains(event.target) && !settingsMenu.contains(event.target)) {
+                if (settingsMenu.classList.contains('active')) {
+                    settingsMenu.classList.add('hide');
+                    setTimeout(() => {
+                        settingsMenu.classList.remove('active');
+                        settingsMenu.classList.remove('hide');
+                    }, 300);
+                }
+            }
+        });
+        
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const themeColor = this.getAttribute('data-theme-color');
+                
+                colorOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.documentElement.removeAttribute('data-theme-color');
+                
+                if (themeColor !== 'blue') {
+                    document.documentElement.setAttribute('data-theme-color', themeColor);
+                }
+                
+                localStorage.setItem('theme-color', themeColor);
+            });
+        });
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                darkModeToggle.checked = true;
+            }
+            
+            const savedThemeColor = localStorage.getItem('theme-color');
+            if (savedThemeColor && savedThemeColor !== 'blue') {
+                document.documentElement.setAttribute('data-theme-color', savedThemeColor);
+                
+                colorOptions.forEach(option => {
+                    if (option.getAttribute('data-theme-color') === savedThemeColor) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+            }
+            
+            initializeTopics();
+        });
+        
+        // Feito por mim :D
+    </script>
+</body>
+</html>
