@@ -383,7 +383,7 @@
         .telegram-btn i {
             margin-right: 8px;
         }
-        .settings-btn {
+        .settings-btn, .clock-btn {
             background-color: var(--primary);
             color: var(--on-primary);
             border: none;
@@ -398,17 +398,20 @@
             position: relative;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
-        .settings-btn:hover {
+        .settings-btn:hover, .clock-btn:hover {
             background-color: var(--primary);
             filter: brightness(1.1);
             transform: scale(1.05);
         }
-        .settings-btn i {
+        .settings-btn i, .clock-btn i {
             font-size: 18px;
             transition: transform 0.5s ease;
         }
         .settings-btn:hover i {
             transform: rotate(180deg);
+        }
+        .clock-btn:hover i {
+            transform: rotate(360deg);
         }
         .hero {
             position: relative;
@@ -526,6 +529,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--outline-variant);
         }
         .topic-card::before {
             content: '';
@@ -541,6 +545,7 @@
         .topic-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
         }
         .topic-card:hover::before {
             transform: scaleY(1);
@@ -590,6 +595,7 @@
             overflow-y: auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             animation: modalSlideIn 0.3s ease;
+            border: 1px solid var(--outline-variant);
         }
         @keyframes modalSlideIn {
             from {
@@ -651,6 +657,7 @@
             margin-bottom: 25px;
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid var(--outline-variant);
         }
         .tutorial-section-title {
             background-color: var(--primary-container);
@@ -669,14 +676,15 @@
             padding: 20px;
         }
         .terminal-container {
-            background-color: #1E1E1E;
+            background-color: var(--elevation-2);
             border-radius: 8px;
             overflow: hidden;
             margin: 15px 0;
             font-family: 'Courier New', monospace;
+            border: 1px solid var(--outline-variant);
         }
         .terminal-header {
-            background-color: #323232;
+            background-color: var(--elevation-1);
             padding: 8px 15px;
             display: flex;
             align-items: center;
@@ -688,7 +696,7 @@
             margin-right: 6px;
         }
         .terminal-dot.red {
-            background-color: #FF5F56;
+            background-color: var(--error);
         }
         .terminal-dot.yellow {
             background-color: #FFBD2E;
@@ -698,7 +706,7 @@
         }
         .terminal-body {
             padding: 15px;
-            color: #D4D4D4;
+            color: var(--on-surface);
             font-size: 14px;
             line-height: 1.5;
             display: flex;
@@ -710,9 +718,9 @@
             word-break: break-all;
         }
         .terminal-copy {
-            background-color: #323232;
-            color: #D4D4D4;
-            border: none;
+            background-color: var(--elevation-1);
+            color: var(--on-surface);
+            border: 1px solid var(--outline-variant);
             padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
@@ -722,7 +730,7 @@
             margin-left: 10px;
         }
         .terminal-copy:hover {
-            background-color: #424242;
+            background-color: var(--elevation-2);
         }
         .steps-container {
             margin: 15px 0;
@@ -770,6 +778,7 @@
             align-items: center;
             justify-content: space-between;
             transition: all 0.3s ease;
+            border: 1px solid var(--outline-variant);
         }
         .download-box:hover {
             transform: translateY(-3px);
@@ -838,6 +847,7 @@
             border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
+            border: 1px solid var(--outline-variant);
         }
         .links-title {
             font-size: 16px;
@@ -887,17 +897,18 @@
             padding: 20px;
             margin: 20px 0;
             text-align: center;
+            border: 1px solid var(--outline-variant);
         }
         
         .video-placeholder {
-            background-color: #000;
+            background-color: var(--elevation-2);
             border-radius: 8px;
             height: 200px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--on-surface);
             margin-top: 15px;
             position: relative;
             overflow: hidden;
@@ -905,13 +916,13 @@
         .video-placeholder i {
             font-size: 48px;
             margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--primary);
         }
         .video-play-btn {
             position: absolute;
             width: 60px;
             height: 60px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -920,12 +931,13 @@
             transition: all 0.3s ease;
         }
         .video-play-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: var(--primary);
+            filter: brightness(1.1);
             transform: scale(1.1);
         }
         .video-play-btn i {
             font-size: 24px;
-            color: white;
+            color: var(--on-primary);
         }
         .note-box {
             background-color: var(--tertiary-container);
@@ -933,6 +945,7 @@
             border-radius: 8px;
             padding: 15px;
             margin: 20px 0;
+            border: 1px solid var(--outline-variant);
         }
         .note-box-title {
             font-weight: 600;
@@ -955,6 +968,7 @@
             border-radius: 8px;
             padding: 15px;
             margin: 20px 0;
+            border: 1px solid var(--outline-variant);
         }
         .warning-box-title {
             font-weight: 600;
@@ -1181,7 +1195,7 @@
                 padding: 8px 15px;
                 font-size: 14px;
             }
-            .settings-btn {
+            .settings-btn, .clock-btn {
                 width: 36px;
                 height: 36px;
             }
@@ -1285,6 +1299,9 @@
                 <a href="https://t.me/MotoG34" target="_blank" class="telegram-btn">
                     <i class="fab fa-telegram-plane"></i>
                     Entrar no Grupo
+                </a>
+                <a href="atualizacoes.html" class="clock-btn" title="Atualizações">
+                    <i class="fas fa-clock"></i>
                 </a>
                 <button class="settings-btn" id="settingsBtn">
                     <i class="fas fa-cog"></i>
@@ -2666,11 +2683,13 @@
             navigator.clipboard.writeText(terminalCommand).then(function() {
                 const originalText = button.textContent;
                 button.textContent = 'Copiado!';
-                button.style.backgroundColor = '#4CAF50';
+                button.style.backgroundColor = 'var(--primary)';
+                button.style.color = 'var(--on-primary)';
                 
                 setTimeout(function() {
                     button.textContent = originalText;
-                    button.style.backgroundColor = '#323232';
+                    button.style.backgroundColor = 'var(--elevation-1)';
+                    button.style.color = 'var(--on-surface)';
                 }, 2000);
             }).catch(function(err) {
                 console.error('Erro ao copiar texto: ', err);
